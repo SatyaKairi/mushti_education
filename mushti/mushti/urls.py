@@ -20,12 +20,10 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('classes/',include('Classes.urls')),
-    path('Subject/',include('Subject.urls')),
-    path('Chapter/',include('Chapter.urls')),
-    path('Exercise/',include('Exercise.urls')),
-    path('Question/',include('Question.urls')),
-
-
+    path('subject/',include('Subject.urls')),
+    path('chapter/',include('Chapter.urls')),
+    path('exercise/',include('Exercise.urls')),
+    path('question/',include('Question.urls')),
 ]
 
 #if settings.DEBUG:

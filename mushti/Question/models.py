@@ -10,10 +10,15 @@ class QuestionManager(models.Manager):
 class Question(models.Model):
     
     question=models.TextField()
-    option1=models.CharField(max_length=100)
-    option2=models.CharField(max_length=100)
-    ExerciseID = models.ForeignKey(to=Exercise,on_delete=models.CASCADE)
+    question_image = models.ImageField(null=True,blank=True)
+    option1=models.CharField(max_length=200, null=True, blank = True)
+    option2=models.CharField(max_length=200, null=True, blank = True)
+    option3=models.CharField(max_length=200, null=True, blank = True)
+    option4=models.CharField(max_length=200, null=True, blank = True)
     answer=models.TextField()
+    answer_image = models.ImageField(null=True, blank=True)
+    
+    ExerciseID = models.ForeignKey(to=Exercise,on_delete=models.CASCADE)
     created_by = models.ForeignKey(User,on_delete=models.SET_NULL, null=True, blank = True)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
